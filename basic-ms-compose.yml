@@ -3,6 +3,7 @@ version: "3"
 services:
     jce_java:
         build: ./docker-jce-jre
+        #        镜像名称或镜像ID
         image: pronter/jce-java
         read_only: true
         command: echo "jce java"

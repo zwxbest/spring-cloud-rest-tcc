@@ -25,7 +25,7 @@ services:
     solar_mysql:
         image: mysql:5.7.17
         ports:
-            - "3306:3306"
+            - "3307:3307"
         volumes:
             - "./docker-mysql/share/:/share/"
             - "./docker-mysql/db/:/docker-entrypoint-initdb.d/:ro"
