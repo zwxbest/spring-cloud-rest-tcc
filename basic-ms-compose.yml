@@ -5,7 +5,6 @@ services:
         build: ./docker-jce-jre
         #        镜像名称或镜像ID
         image: pronter/jce-java
-        mem_limit: 60m
         read_only: true
         command: echo "jce java"
         environment:
@@ -13,7 +12,6 @@ services:
     eureka1:
         build: ./eureka-registry-ms
         image: prontera/eureka-registry-ms
-        mem_limit: 60m
         ports:
             - "8763:8763"
             - "9274:9274"
@@ -25,7 +23,6 @@ services:
     eureka2:
         build: ./eureka-registry-ms
         image: prontera/eureka-registry-ms
-        mem_limit: 60m
         ports:
             - "8762:8762"
             - "10177:10177"
@@ -36,7 +33,6 @@ services:
         command: "--spring.profiles.active=peer2"
     config_server:
         build: ./config-ms
-        mem_limit: 60m
         image: prontera/config-server-ms
         ports:
             - "10888:10888"
