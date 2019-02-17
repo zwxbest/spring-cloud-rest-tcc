@@ -1,17 +1,14 @@
-version: "3"
+version: "2"
 
 services:
     jce_java:
         build: ./docker-jce-jre
         image: pronter/jce-java
+        memory_limit: 50m
         read_only: true
         command: echo "jce java"
         environment:
             - TZ=Asia/Shanghai
-        deploy:
-          resources:
-            limits:
-              memory: 50M
     rabbitmq:
         image: rabbitmq:3.6.6-management
         ports:
