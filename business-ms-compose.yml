@@ -3,6 +3,7 @@ version: "3"
 services:
     jce_java:
         build: ./docker-jce-jre
+        mem_limit: 60m
         image: pronter/jce-java
         read_only: true
         command: echo "jce java"
@@ -10,6 +11,7 @@ services:
             - TZ=Asia/Shanghai
     account:
         build: ./account-ms
+        mem_limit: 60m
         image: prontera/account-ms
         ports:
             - "10014:10014"
@@ -25,6 +27,7 @@ services:
             - TZ=Asia/Shanghai
     order:
         build: ./order-ms
+        mem_limit: 60m
         image: prontera/order-ms
         ports:
             - "8295:8295"
@@ -40,6 +43,7 @@ services:
             - TZ=Asia/Shanghai
     product:
         build: ./product-ms
+        mem_limit: 60m
         image: prontera/product-ms
         ports:
             - "8040:8040"
@@ -55,6 +59,7 @@ services:
             - TZ=Asia/Shanghai
     tcc_coordinator:
         build: ./tcc-coordinator-ms
+        mem_limit: 60m
         image: prontera/tcc-coordinator-ms
         ports:
             - "11020:11020"
@@ -70,6 +75,7 @@ services:
             - TZ=Asia/Shanghai
     membership:
         build: ./membership-ms
+        mem_limit: 60m
         image: prontera/membership-ms
         ports:
             - "10673:10673"

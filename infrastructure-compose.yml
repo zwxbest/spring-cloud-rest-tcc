@@ -3,6 +3,7 @@ version: "3"
 services:
     jce_java:
         build: ./docker-jce-jre
+        mem_limit: 60m
         image: pronter/jce-java
         read_only: true
         command: echo "jce java"
@@ -10,6 +11,7 @@ services:
             - TZ=Asia/Shanghai
     rabbitmq:
         image: rabbitmq:3.6.6-management
+        mem_limit: 60m
         ports:
             - "5671:5671"
             - "5672:5672"
@@ -24,6 +26,7 @@ services:
             - RABBITMQ_DEFAULT_VHOST=prontera
     solar_mysql:
         image: mysql:5.7.17
+        mem_limit: 60m
         ports:
             - "3307:3307"
         volumes:
