@@ -4,17 +4,16 @@ services:
     jce_java:
         build: ./docker-jce-jre
         image: pronter/jce-java
+        #mem_limit: 100m
         read_only: true
         command: echo "jce java"
         environment:
             - TZ=Asia/Shanghai
-        deploy:
-          resources:
-            limits:
-              memory: 50M
+
     account:
         build: ./account-ms
         image: prontera/account-ms
+        #mem_limit: 100m
         ports:
             - "10014:10014"
             - "10248:10248"
@@ -29,6 +28,7 @@ services:
             - TZ=Asia/Shanghai
     order:
         build: ./order-ms
+        #mem_limit: 100m
         image: prontera/order-ms
         ports:
             - "8295:8295"
@@ -44,6 +44,7 @@ services:
             - TZ=Asia/Shanghai
     product:
         build: ./product-ms
+        #mem_limit: 100m
         image: prontera/product-ms
         ports:
             - "8040:8040"
@@ -74,6 +75,7 @@ services:
             - TZ=Asia/Shanghai
     membership:
         build: ./membership-ms
+        #mem_limit: 100m
         image: prontera/membership-ms
         ports:
             - "10673:10673"

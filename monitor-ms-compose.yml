@@ -1,15 +1,17 @@
-version: "3"
+version: "2"
 
 services:
     jce_java:
         build: ./docker-jce-jre
         image: pronter/jce-java
+        #mem_limit: 100m
         read_only: true
         command: echo "jce java"
         environment:
             - TZ=Asia/Shanghai
     gateway:
         build: ./api-gateway-ms
+        #mem_limit: 100m
         image: prontera/gateway-ms
         ports:
             - "7291:7291"
@@ -20,6 +22,7 @@ services:
             - TZ=Asia/Shanghai
     hystrix_dashboard:
         build: ./hystrix-dashboard-ms
+        #mem_limit: 100m
         image: prontera/hystrix-dashboard-ms
         ports:
             - "8193:8193"
@@ -30,6 +33,7 @@ services:
             - TZ=Asia/Shanghai
     spring_boot_admin:
         build: ./spring-boot-admin-ms
+        #mem_limit: 100m
         image: prontera/spring-boot-admin-ms
         ports:
             - "7020:7020"
@@ -40,6 +44,7 @@ services:
             - TZ=Asia/Shanghai
     zipkin_server:
         build: ./zipkin-ms
+        #mem_limit: 100m
         image: prontera/zipkin-ms
         ports:
             - "9411:9411"

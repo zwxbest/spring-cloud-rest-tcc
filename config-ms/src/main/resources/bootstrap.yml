@@ -34,7 +34,7 @@ spring:
     config:
       server:
         git:
-          uri: 'https://git.oschina.net/witless/conf-repo.git'
+          uri: 'https://gitee.com/witless/conf-repo.git'
           #uri: 'https://github.com/prontera/solar.git'
           #searchPaths: '{application}'
           clone-on-start: true
